@@ -527,7 +527,7 @@ Thrift.BinaryHttpTransport = function(url) {
         var callback = args.length > 0 ? args.pop() : onerror;
         if (typeof callback !== 'function') callback = onerror;
 
-        var xhr = new XMLHttpRequest();
+        var xhr = new XMLHttpRequest({mozSystem:true});
         xhr.open('POST', this.url, /*async*/true);
         xhr.setRequestHeader('Content-Type', 'application/x-thrift');
         xhr.setRequestHeader('Accept', 'application/x-thrift');
